@@ -1,3 +1,4 @@
+
 # coding: latin-1
 import sys
 import h5py
@@ -12,7 +13,7 @@ def load_data(filename, degree=0):
     
     # Load the .mat file
     f = h5py.File(filename, "r")
-    data = np.array(f.items()[0][1], dtype=float)
+    data = np.array(list(f.items())[0][1], dtype=float)
     f.close()
 
     # Load the intepolation c++ code
